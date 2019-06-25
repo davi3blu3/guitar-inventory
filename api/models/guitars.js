@@ -53,7 +53,27 @@ const guitars = {
       cb(null, result);
     });
   },
-  updateById: () => {},
+
+  updateById: (params, data, cb) => {
+    let guitar = {
+      specs: {
+        color: data.specs.color,
+        construction: data.specs.construction,
+        make: data.specs.make,
+        model: data.specs.model,
+        year: data.specs.year
+      },
+      type: data.type
+    };
+    bucket.upsert(params.id, guitar, (err, result) => {
+      if (err) {
+        console.log(err);
+        return cb(err, null);
+      }
+      cb(null, result);
+    });
+  },
+
   deleteById: (data, cb) => {
     bucket.remove(data.id, (err, result) => {
       if (err) {

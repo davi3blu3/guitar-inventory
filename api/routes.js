@@ -34,6 +34,17 @@ const appRouter = app => {
     });
   });
 
+  // UPDATE one guitar
+  app.put('/guitars/:id', (req, res) => {
+    guitars.updateById(req.params, req.body, (err, result) => {
+      if (err) {
+        console.log(err);
+        return res.status(400).send(err);
+      }
+      res.send(result);
+    });
+  });
+
   // DELETE one guitar
   app.delete('/guitars/:id', (req, res) => {
     guitars.deleteById(req.params, (err, result) => {
