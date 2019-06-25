@@ -14,7 +14,23 @@ const guitars = {
       cb(null, result);
     });
   },
-  getById: () => {},
+
+  getById: (data, cb) => {
+    let statement =
+      'SELECT specs, type FROM ' +
+      bucket._name +
+      ' WHERE META(guitars).id = "' +
+      data.id +
+      '"';
+    let query = N1qlQuery.fromString(statement);
+    bucket.query(query, (err, result) => {
+      if (err) {
+        return cb(err, null);
+      }
+      cb(null, result);
+    });
+  },
+
   postNew: (data, cb) => {
     let guitar = {
       specs: {
@@ -38,7 +54,15 @@ const guitars = {
     });
   },
   updateById: () => {},
-  deleteById: () => {}
+  deleteById: (data, cb) => {
+    bucket.remove(data.id, (err, result) => {
+      if (err) {
+        console.log(err);
+        return cb(err, null);
+      }
+      cb(null, result);
+    });
+  }
 };
 
 module.exports = guitars;
