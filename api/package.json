@@ -1,0 +1,30 @@
+{
+  "name": "guitar-api",
+  "version": "1.0.0",
+  "description": "node express api with couchbase db",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davi3blu3/guitar-inventory.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "couchbase"
+  ],
+  "author": "davi3blu3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davi3blu3/guitar-inventory/issues"
+  },
+  "homepage": "https://github.com/davi3blu3/guitar-inventory#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "couchbase": "^2.6.4",
+    "express": "^4.17.1",
+    "uuid": "^3.3.2"
+  }
+}
