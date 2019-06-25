@@ -3,16 +3,26 @@ const N1qlQuery = require('couchbase').N1qlQuery;
 const bucket = require('../app').bucket;
 
 const guitars = {
-  getAll: () => {},
+  getAll: cb => {
+    let statement = 'SELECT META(guitars).id, specs, type FROM ' + bucket._name;
+    let query = N1qlQuery.fromString(statement);
+    bucket.query(query, (err, result) => {
+      if (err) {
+        console.log(err);
+        return cb(err, null);
+      }
+      cb(null, result);
+    });
+  },
   getById: () => {},
   postNew: (data, cb) => {
     let guitar = {
       specs: {
-        color: data.color,
-        construction: data.construction,
-        make: data.make,
-        model: data.model,
-        year: data.year
+        color: data.specs.color,
+        construction: data.specs.construction,
+        make: data.specs.make,
+        model: data.specs.model,
+        year: data.specs.year
       },
       timestamp: new Date(),
       type: data.type,
