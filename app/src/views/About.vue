@@ -10,7 +10,7 @@
           </h1>
         </v-card-title>
         <v-card-text class="justify-center">
-          <p>GuitHUB is an application for guitar players to track and share their guitar collections online.</p>
+          <p>GuitHUB is an application for guitar players to track and share their guitar collections online. Create an inventory of all of your favorite guitars, amplifiers, and effects pedals.</p>
         </v-card-text>
         <v-card-text class="light-text">
           <div>
@@ -21,17 +21,18 @@
           </div>
           <br>
           <div>
-            Icons courtesy of Freepik and Iconnice from
+            Icons courtesy of
             <a
               href="https://www.flaticon.com/"
               title="Flaticon"
               target="_blank"
-            >www.flaticon.com</a>, and licensed by
+            >flaticon.com</a> and
+            <a href="https://www.svgrepo.com/">svgrepo.com</a>, and licensed by
             <a
               href="http://creativecommons.org/licenses/by/3.0/"
               title="Creative Commons BY 3.0"
               target="_blank"
-            >CC 3.0 BY</a>
+            >Creative Commons</a>
           </div>
         </v-card-text>
       </v-card>
