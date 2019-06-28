@@ -8,6 +8,7 @@ import Login from './views/auth/Login.vue';
 import Register from './views/auth/Register.vue';
 import ForgotPw from './views/auth/ForgotPw.vue';
 import MyAccount from './views/account/MyAccount.vue';
+import GuitarDetail from './views/account/GuitarDetail.vue';
 
 Vue.use(Router);
 
@@ -44,6 +45,11 @@ export default new Router({
       path: '/account',
       name: 'myAccount',
       component: MyAccount
+    },
+    {
+      path: '/guitar/:id',
+      name: 'guitarDetail',
+      component: GuitarDetail
     }
   ]
 });

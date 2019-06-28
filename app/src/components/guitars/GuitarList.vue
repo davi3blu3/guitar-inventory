@@ -4,20 +4,30 @@
     <h3>Your Guitars:</h3>
     <v-layout row wrap>
       <!-- Guitar -->
-      <v-flex v-for="n in 8" :key="n" xs6 md4>
+      <v-flex v-for="g in guitars" :key="g.id" xs6 md4>
         <v-card class="ma-2" to="/">
           <div class="d-flex pa-3">
             <img
+              v-if="g.type == 'electric'"
               class="justify-center"
               src="../../assets/icons/elec.svg"
               width="100px"
               height="100px"
+              alt="electric guitar icon"
+            >
+            <img
+              v-else
+              class="justify-center"
+              src="../../assets/icons/acous.svg"
+              width="100px"
+              height="100px"
+              alt="acoustic guitar icon"
             >
           </div>
-          <v-card-title>1957 Fender Stratocaster</v-card-title>
+          <v-card-title>{{ g.specs.make + ' ' + g.specs.model }}</v-card-title>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn flat>View Details</v-btn>
+            <v-btn flat :to="{path: '/guitar/' + g.id}">View Details</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -34,8 +44,22 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  name: "GuitarList"
+  name: "GuitarList",
+  data: () => ({
+    guitars: []
+  }),
+  mounted() {
+    axios({ method: "GET", url: "http://localhost:3000/guitars" }).then(
+      result => {
+        this.guitars = result.data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 };
 </script>
 
