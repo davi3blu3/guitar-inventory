@@ -3,7 +3,11 @@
     <v-flex my-5 xs10 offset-xs1 sm8 offset-sm2 md6 offset-md3>
       <v-card class="pa-5">
         <v-card-title class="justify-center">
-          <h1>Sign up for GuitHUB</h1>
+          <h1>
+            Sign up for
+            <span class="font-weight-bold">Guit</span>
+            <span class="font-weight-light">HUB</span>
+          </h1>
         </v-card-title>
         <v-card-text class="justify-center">
           <v-text-field v-model="email" :rules="emailRules" label="Email" required></v-text-field>

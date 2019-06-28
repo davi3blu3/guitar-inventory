@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
+    <v-toolbar app class="header">
+      <v-toolbar-title class="headline">
         <router-link class="home-link" to="/">
           <span class="font-weight-bold">Guit</span>
           <span class="font-weight-light">HUB</span>
@@ -37,7 +37,7 @@ export default {
   text-decoration: none;
 }
 .v-content {
-  background: url(assets/guitar-bg.jpeg) no-repeat center center fixed;
+  background: url(assets/img/guitar-bg.jpeg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
