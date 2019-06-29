@@ -12,7 +12,7 @@
               src="../../assets/icons/pedal.svg"
               width="100px"
               height="100px"
-            >
+            />
           </div>
           <v-card-title>Ibanez TS-9</v-card-title>
           <v-card-actions>
@@ -38,4 +38,3 @@ export default {
   name: "PedalList"
 };
 </script>
-

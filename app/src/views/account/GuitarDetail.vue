@@ -2,7 +2,10 @@
   <v-layout>
     <v-flex my-5 xs12 md10 offset-md1>
       <section class="pa-4 page">
-        <h2>{{ guitar[0].specs.year }} {{ guitar[0].specs.make }} {{ guitar[0].specs.model }}</h2>
+        <h2>
+          {{ guitar[0].specs.year }} {{ guitar[0].specs.make }}
+          {{ guitar[0].specs.model }}
+        </h2>
         <v-layout>
           <v-flex xs12 md6>
             <div class="d-flex pa-3">
@@ -13,7 +16,7 @@
                 width="100%"
                 height="100%"
                 alt="electric guitar icon"
-              >
+              />
               <img
                 v-else
                 class="justify-center"
@@ -21,7 +24,7 @@
                 width="100%"
                 height="100%"
                 alt="acoustic guitar icon"
-              >
+              />
             </div>
           </v-flex>
           <v-flex xs12 md6>

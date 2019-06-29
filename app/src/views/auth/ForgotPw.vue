@@ -6,7 +6,12 @@
           <h1>Forgot Password?</h1>
         </v-card-title>
         <v-card-text class="justify-center">
-          <v-text-field v-model="email" :rules="emailRules" label="Email" required></v-text-field>
+          <v-text-field
+            v-model="email"
+            :rules="emailRules"
+            label="Email"
+            required
+          ></v-text-field>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>

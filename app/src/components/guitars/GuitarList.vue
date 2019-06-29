@@ -14,7 +14,7 @@
               width="100px"
               height="100px"
               alt="electric guitar icon"
-            >
+            />
             <img
               v-else
               class="justify-center"
@@ -22,12 +22,12 @@
               width="100px"
               height="100px"
               alt="acoustic guitar icon"
-            >
+            />
           </div>
-          <v-card-title>{{ g.specs.make + ' ' + g.specs.model }}</v-card-title>
+          <v-card-title>{{ g.specs.make + " " + g.specs.model }}</v-card-title>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn flat :to="{path: '/guitar/' + g.id}">View Details</v-btn>
+            <v-btn flat :to="{ path: '/guitar/' + g.id }">View Details</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -63,5 +63,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

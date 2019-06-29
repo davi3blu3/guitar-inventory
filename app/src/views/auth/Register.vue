@@ -10,7 +10,12 @@
           </h1>
         </v-card-title>
         <v-card-text class="justify-center">
-          <v-text-field v-model="email" :rules="emailRules" label="Email" required></v-text-field>
+          <v-text-field
+            v-model="email"
+            :rules="emailRules"
+            label="Email"
+            required
+          ></v-text-field>
           <v-text-field
             v-model="password"
             :append-icon="show ? 'visibility' : 'visibility_off'"

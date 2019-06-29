@@ -12,7 +12,7 @@
               src="../../assets/icons/amp.svg"
               width="100px"
               height="100px"
-            >
+            />
           </div>
           <v-card-title>1972 Marshall SL</v-card-title>
           <v-card-actions>

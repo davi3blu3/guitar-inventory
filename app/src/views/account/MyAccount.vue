@@ -3,22 +3,22 @@
     <v-flex my-5 xs12 md10 offset-md1>
       <section class="pa-4 page">
         <h2>Welcome {{ username }}!</h2>
-        <hr>
+        <hr />
         <div class="my-2">
-          <v-btn v-on:click="view='gts'">Guitars</v-btn>
-          <v-btn v-on:click="view='amp'">Amplifiers</v-btn>
-          <v-btn v-on:click="view='fx'">Effects</v-btn>
+          <v-btn v-on:click="view = 'gts'">Guitars</v-btn>
+          <v-btn v-on:click="view = 'amp'">Amplifiers</v-btn>
+          <v-btn v-on:click="view = 'fx'">Effects</v-btn>
         </div>
 
-        <div v-if="view=='gts'">
+        <div v-if="view == 'gts'">
           <guitar-list></guitar-list>
         </div>
 
-        <div v-if="view=='amp'">
+        <div v-if="view == 'amp'">
           <amp-list></amp-list>
         </div>
 
-        <div v-if="view=='fx'">
+        <div v-if="view == 'fx'">
           <pedal-list></pedal-list>
         </div>
       </section>
@@ -62,4 +62,3 @@ export default {
   text-decoration: none;
 }
 </style>
-
