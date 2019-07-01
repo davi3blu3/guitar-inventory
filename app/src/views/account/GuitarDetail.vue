@@ -16,7 +16,7 @@
                 width="100%"
                 height="100%"
                 alt="electric guitar icon"
-              />
+              >
               <img
                 v-else
                 class="justify-center"
@@ -24,7 +24,7 @@
                 width="100%"
                 height="100%"
                 alt="acoustic guitar icon"
-              />
+              >
             </div>
           </v-flex>
           <v-flex xs12 md6>

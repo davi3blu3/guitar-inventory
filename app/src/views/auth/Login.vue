@@ -11,12 +11,7 @@
         </v-card-title>
         <v-card-text class="justify-center">
           <v-form>
-            <v-text-field
-              v-model="email"
-              :rules="emailRules"
-              label="Email"
-              required
-            ></v-text-field>
+            <v-text-field v-model="email" :rules="emailRules" label="Email" required></v-text-field>
             <v-text-field
               v-model="password"
               :append-icon="show ? 'visibility' : 'visibility_off'"
@@ -32,7 +27,7 @@
           <v-btn flat to="/forgot">Forgot Password</v-btn>
           <v-spacer></v-spacer>
           <v-btn class="danger" to="/">Cancel</v-btn>
-          <v-btn class="success" to="/account">Submit</v-btn>
+          <v-btn class="success" v-on:click="login()">Submit</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -40,6 +35,7 @@
 </template>
 
 <script>
+import firebase from "firebase";
 export default {
   data: () => ({
     show: false,
@@ -53,6 +49,16 @@ export default {
       v => !!v || "Password is required",
       v => v.length >= 8 || "Password must be at least 8 characters"
     ]
-  })
+  }),
+  methods: {
+    login: function() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          this.$router.replace("./account"); // SUCCESS!
+        });
+    }
+  }
 };
 </script>
