@@ -2,14 +2,14 @@
   <v-app>
     <v-toolbar app class="header">
       <v-toolbar-title class="headline">
-        <router-link class="home-link" to="/">
+        <router-link class="nav-link" to="/">
           <span class="font-weight-bold">Guit</span>
           <span class="font-weight-light">HUB</span>
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <!-- condish display -->
       <v-btn flat to="/about">About</v-btn>
+      <!-- TODO: make v-menu conditional on logged in -->
       <v-menu>
         <template v-slot:activator="{ on }">
           <v-btn flat v-on="on">
@@ -17,12 +17,17 @@
           </v-btn>
         </template>
         <v-list>
-          <v-list-tile auto>
+          <v-list-tile>
             <img
               src="./assets/icons/default-profile.png"
               class="profile-img"
               alt="default profile icon"
             />
+          </v-list-tile>
+          <v-list-tile>
+            <router-link class="nav-link" to="/account">
+              <v-list-tile-title>My Account</v-list-tile-title>
+            </router-link>
           </v-list-tile>
           <v-list-tile>
             <v-list-tile-title>Logout</v-list-tile-title>
@@ -52,7 +57,7 @@ export default {
 </script>
 
 <style>
-.home-link {
+.nav-link {
   color: black;
   text-decoration: none;
 }
