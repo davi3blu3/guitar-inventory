@@ -8,7 +8,27 @@
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
+      <!-- condish display -->
       <v-btn flat to="/about">About</v-btn>
+      <v-menu>
+        <template v-slot:activator="{ on }">
+          <v-btn flat v-on="on">
+            <img src="./assets/icons/default-profile.png" width="35px" alt="default profile icon" />
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-tile auto>
+            <img
+              src="./assets/icons/default-profile.png"
+              class="profile-img"
+              alt="default profile icon"
+            />
+          </v-list-tile>
+          <v-list-tile>
+            <v-list-tile-title>Logout</v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
     </v-toolbar>
 
     <v-content background>
@@ -42,5 +62,9 @@ export default {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+.profile-img {
+  margin: auto;
+  width: 35px;
 }
 </style>
