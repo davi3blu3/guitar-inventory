@@ -1,54 +1,56 @@
-import Vue from "vue";
-import Router from "vue-router";
+import Vue from 'vue';
+import Router from 'vue-router';
 
 // Route Components
-import Home from "./views/Home.vue";
-import About from "./views/About.vue";
-import Login from "./views/auth/Login.vue";
-import Register from "./views/auth/Register.vue";
-import ForgotPw from "./views/auth/ForgotPw.vue";
-import MyAccount from "./views/account/MyAccount.vue";
-import GuitarDetail from "./views/account/GuitarDetail.vue";
+import Home from './views/Home.vue';
+import About from './views/About.vue';
+import MyAccount from './views/MyAccount.vue';
+
+import Login from './views/auth/Login.vue';
+import Register from './views/auth/Register.vue';
+import ForgotPw from './views/auth/ForgotPw.vue';
+
+import GuitarDetail from './views/guitars/GuitarDetail.vue';
 
 Vue.use(Router);
 
 export default new Router({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "/",
-      name: "home",
+      path: '/',
+      name: 'home',
       component: Home
     },
     {
-      path: "/about",
-      name: "about",
+      path: '/about',
+      name: 'about',
       component: About
     },
     {
-      path: "/login",
-      name: "login",
+      path: '/login',
+      name: 'login',
       component: Login
     },
     {
-      path: "/register",
-      name: "register",
+      path: '/register',
+      name: 'register',
       component: Register
     },
     {
-      path: "/forgot",
-      name: "forgotPw",
+      path: '/forgot',
+      name: 'forgotPw',
       component: ForgotPw
     },
     {
-      path: "/account",
-      name: "myAccount",
+      path: '/account',
+      name: 'myAccount',
       component: MyAccount
     },
     {
-      path: "/guitar/:id",
-      name: "guitarDetail",
+      path: '/guitar/:id',
+      name: 'guitarDetail',
       component: GuitarDetail
     }
   ]

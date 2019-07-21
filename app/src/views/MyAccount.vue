@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import GuitarList from "../../components/guitars/GuitarList";
-import AmpList from "../../components/amplifiers/AmpList";
-import PedalList from "../../components/pedals/PedalList";
+import GuitarList from "./guitars/GuitarList";
+import AmpList from "./amplifiers/AmpList";
+import PedalList from "./pedals/PedalList";
 
 export default {
   data: () => ({
